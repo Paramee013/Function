@@ -1,0 +1,29 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+int checknum(int,int);
+int main() {
+    int A,round=1;
+    srand (time(NULL));
+    int random = rand()% 10 + 1;
+    cout << "### Welcome to guessing number game ###\n";
+    cout << "Secret number has been chosen\n";
+    do {
+        cout << "Guess the number (1 to 10) : " ;
+        cin >> A;
+        round++;
+        checknum(random, A);
+    }while(random!=A);
+    cout << "Congratulations!\n";
+    cout << "The secret number is " << random << endl;
+    cout << "You made " << round << " guesses" << endl;
+    return 0;
+}
+int checknum(int run,int user){
+    if (run > user){
+        cout << "The secret number is lower\n" ;}
+    else if (run < user){
+        cout << "The secret number is higher\n" ;}
+
+    return (run,user);
+}
